@@ -1,12 +1,15 @@
 {
   "name": "shopping-cart",
+  "homepage": "https://by-ilya.github.io/shopping-cart",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
@@ -24,7 +27,8 @@
     "@material-ui/core": "4.11.4",
     "@material-ui/icons": "4.11.2",
     "react-query": "3.16.0",
-    "sass": "1.32.12"
+    "sass": "1.32.12",
+    "gh-pages": "3.1.0"
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",
