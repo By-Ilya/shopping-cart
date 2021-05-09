@@ -1,0 +1,54 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "globals": {
+    "__CONFIG__": true,
+    "__ENV__": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./",
+    "jsx": true,
+    "useJSXTextNode": true,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "extends": [
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "react", "jsx-a11y"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "indent": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off",
+    "react/jsx-wrap-multilines": "off",
+    "implicit-arrow-linebreak": 0,
+    "react/prop-types": 0,
+    "linebreak-style": ["error", "unix"],
+    "max-len": 0,
+    "no-plusplus": 0,
+    "no-underscore-dangle": 0,
+    "react/jsx-props-no-spreading": ["warn"],
+    "react/forbid-prop-types": 0,
+    "import/prefer-default-export": 0,
+    "template-curly-spacing": ["off"],
+    "array-callback-return": 0,
+    "jsx-a11y/media-has-caption": 0
+  }
+}

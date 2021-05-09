@@ -1,0 +1,31 @@
+.toolbarHeader {
+  background: white;
+
+  .avatarContainer {
+    margin-right: 1rem;
+  }
+
+  .headerText {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .name {
+      color: black;
+    }
+
+    .copyright {
+      color: gray;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .header {
+    color: black;
+  }
+
+  .grow {
+    flex-grow: 1;
+  }
+}
