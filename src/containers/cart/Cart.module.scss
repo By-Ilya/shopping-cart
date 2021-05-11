@@ -1,7 +1,13 @@
 .cartContainer {
   font-family: Arial, Helvetica, sans-serif;
-  width: 500px;
+  width: 30vw;
   padding: 20px;
+
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 
   .emptyCart {
     display: flex;

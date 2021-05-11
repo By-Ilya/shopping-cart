@@ -2,28 +2,41 @@ import React from 'react';
 import { Typography } from '@material-ui/core';
 import styles from './ErrorPage.module.scss';
 
-const ErrorCode: React.FC = () => (
+interface ErrorPageProps {
+  code: number,
+  message: string
+}
+
+interface ErrorCodeProps {
+  code: number
+}
+
+interface ErrorMessageProps {
+  message: string
+}
+
+const ErrorCode: React.FC<ErrorCodeProps> = ({ code }) => (
         <Typography
             variant="h1"
             className={styles.errorCode}
         >
-            404
+            {code}
         </Typography>
 );
 
-const ErrorText: React.FC = () => (
+const ErrorText: React.FC<ErrorMessageProps> = ({ message }) => (
         <Typography
             variant="h3"
             className={styles.errorText}
         >
-            Something went wrong...
+            {message}
         </Typography>
 );
 
-const ErrorPage: React.FC = () => (
+const ErrorPage: React.FC<ErrorPageProps> = ({ code, message }) => (
         <div className={styles.errorPageContainer}>
-            <ErrorCode />
-            <ErrorText />
+            <ErrorCode code={code} />
+            <ErrorText message={message} />
         </div>
 );
 

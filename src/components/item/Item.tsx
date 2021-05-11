@@ -3,10 +3,10 @@ import { Button } from '@material-ui/core';
 import { CartItemType } from 'containers/items/ItemsContainer';
 import styles from './Item.module.scss';
 
-type ItemProps = {
+interface ItemProps {
   item: CartItemType;
   handleAddToCart: (item: CartItemType) => void;
-};
+}
 
 const Item: React.FC<ItemProps> = (props) => {
   const { item, handleAddToCart } = props;

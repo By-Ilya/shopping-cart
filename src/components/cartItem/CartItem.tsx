@@ -3,22 +3,22 @@ import { Button } from '@material-ui/core';
 import { CartItemType } from 'containers/items/ItemsContainer';
 import styles from './CartItem.module.scss';
 
-type CartItemProps = {
-  key: number;
+interface CartItemProps {
+  key: number,
   item: CartItemType,
   addToCart: (item: CartItemType) => void;
   removeFromCart: (itemId: number) => void;
-};
+}
 
-type AddToCartButtonProps = {
+interface AddToCartButtonProps {
   item: CartItemType;
   onAdd: (item: CartItemType) => void;
-};
+}
 
-type RemoveFromCartProps = {
+interface RemoveFromCartProps {
   itemId: number;
   onRemove: (itemId: number) => void;
-};
+}
 
 const AddToCartButton: React.FC<AddToCartButtonProps> = (props) => {
   const { item, onAdd } = props;
@@ -59,7 +59,7 @@ const CartItem: React.FC<CartItemProps> = (props) => {
   const getTotalForItem = () => (amount * price).toFixed(2);
 
   return (
-      <div key={id} className={styles.cartItemContainer}>
+      <div key={key} className={styles.cartItemContainer}>
           <div>
             <h3>{title}</h3>
             <div className={styles.itemInfo}>

@@ -7,11 +7,11 @@ import fakeStoreIcon from 'icons/fakeStoreIcon.png';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import styles from './TopPanel.module.scss';
 
-type HeaderProps = {
+interface TopPanelProps {
   cartItems: CartItemType[];
   onClickCart: () => void;
   getTotalItems: (cartItems: CartItemType[]) => number;
-};
+}
 
 const StoreLogo: React.FC = () => (
     <div className={styles.avatarContainer}>
@@ -23,7 +23,7 @@ const StoreLogo: React.FC = () => (
     </div>
 );
 
-const CartIcon: React.FC<HeaderProps> = (props) => {
+const CartIcon: React.FC<TopPanelProps> = (props) => {
   const { cartItems, onClickCart, getTotalItems } = props;
 
   return (
@@ -41,7 +41,7 @@ const CartIcon: React.FC<HeaderProps> = (props) => {
   );
 };
 
-const TopPanel: React.FC<HeaderProps> = (props) => {
+const TopPanel: React.FC<TopPanelProps> = (props) => {
   const { cartItems, onClickCart, getTotalItems } = props;
   return (
     <AppBar position="fixed">

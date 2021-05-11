@@ -10,7 +10,7 @@ import Item from 'components/item/Item';
 import ErrorPage from 'containers/errorPage/ErrorPage';
 import styles from './ItemsContainer.module.scss';
 
-export type CartItemType = {
+export interface CartItemType {
   id: number;
   category: string;
   description: string;
@@ -18,7 +18,7 @@ export type CartItemType = {
   price: number;
   title: string;
   amount: number;
-};
+}
 
 const ZEUS_PRODUCT: CartItemType = {
   id: 0,
@@ -80,7 +80,12 @@ const ItemsContainer:React.FC = () => {
   };
 
   if (isLoading) return <LinearProgress />;
-  if (error) return <ErrorPage />;
+  if (!error) {
+    return <ErrorPage
+      code={404}
+      message="Something went wrong:("
+    />;
+  }
 
   return (
       <>
@@ -99,6 +104,7 @@ const ItemsContainer:React.FC = () => {
                       cartItems={cartItems}
                       addToCart={handleAddToCart}
                       removeFromCart={handleRemoveFromCart}
+                      onClose={handleClickOnCart}
                   />
               </Drawer>
               <Grid container spacing={3}>
