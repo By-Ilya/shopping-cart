@@ -80,7 +80,7 @@ const ItemsContainer:React.FC = () => {
   };
 
   if (isLoading) return <LinearProgress />;
-  if (!error) {
+  if (error) {
     return <ErrorPage
       code={404}
       message="Something went wrong:("
